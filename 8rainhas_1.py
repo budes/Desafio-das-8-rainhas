@@ -1,21 +1,7 @@
-"""
-Você deve resolver o clássico exercício das 8 rainhas
-Nele o usuário lhe passa o tamanho do tabuleiro n
-(lembrar que tabuleiros são quadrados então o usuário
-só precisa lhe passar um inteiro) e você deve gerar
-uma todas as distribuições de n rainhas neste tabuleiro
-e imprimi-las de uma forma adequada.
-
-Veja o livro Beginning Python, na descrição
-do video para a explicação da solução, ou entre
-no dropbox para ver a solução comentada
-
-Esse exercício não é fácil!!
-Não se preocupe se você não conseguir.
-"""
+# O código das 8 damas
 
 from math import fabs
-import pdb
+#import pdb
 
 def Tabuleiro(lado=0):
 	# Cria uma lista com '.' como uma base. E as insere em outras listas.
@@ -61,16 +47,18 @@ def Atk_Trail(x, y, Tabuleiro):
 
 	return tab
 
-def percorre(tabuleiro, px=0, py=0):
+def percorre(size, px=0, py=0):
+        #pdb.set_trace()
 	
-	size = len(tabuleiro)
+	# Os tabuleiros podiam ficar de outro modo, mas para ser mais legível utilizei desse jeito.
+	
+	# No ptab ele percorrerá como um for normal
+	# O ntab é para percorrer o tabuleiro no sentido inverso.
+	ptab1 = Atk_Trail(px, py, Tabuleiro(size)).copy()
+	ptab2 = Atk_Trail(px, int(fabs(py-size+1)), Tabuleiro(size)).copy()
+	ntab1 = Atk_Trail(int(fabs(px-size+1)), py, Tabuleiro(size)).copy()
+	ntab2 = Atk_Trail(int(fabs(px-size+1)), int(fabs(py-size+1)), Tabuleiro(size)).copy()	
 
-	pdb.set_trace()
-
-	ptab1 = Atk_Trail(px, py, tabuleiro.copy()).copy()
-	ptab2 = Atk_Trail(px, int(fabs(py-size+1)), tabuleiro.copy()).copy()
-	ntab1 = Atk_Trail(int(fabs(px-size+1)), py, tabuleiro.copy()).copy()
-	ntab2 = Atk_Trail(int(fabs(px-size+1)), int(fabs(py-size+1)), tabuleiro.copy()).copy()	
 
 	for ey in range(size):
 
@@ -102,7 +90,7 @@ def main():
 		for ix in range(size):
 
 
-			tentativas = percorre(Tabuleiro(size).copy(), ix, iy)
+			tentativas = percorre(size, ix, iy)
 			for resultado in tentativas:	
 				cont = 0
 
