@@ -1,6 +1,12 @@
 # Desafio-das-8-rainhas
 Esse repositório hospeda um script que executa o desafio das 8 damas.
 
+## Features que tentei aplicar
+Essas coisas foram mais para ser um "desafio extra", para complementar esse.
+- Multiplos tamanhos de tabuleiros
+- Visualização dos resultados
+- Algo que funcionasse em um notebook de 2010
+
 ## Modo de solução aplicado
 Simulação de posições iniciais para produzir todas as possibilidades possíveis a partir disso
 
