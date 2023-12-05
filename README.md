@@ -47,7 +47,6 @@ Recursos usados para garantir o funcionamento desse script.
 
 #### checaPosicao e colocaDama
 Ambos se parecem muito, mas se diferenciam no seguinte.
-
 Enquanto o checaPosicao calcula, o colocaDama visualiza.
 
 A importância do checaPosicao é que ele garante uma maior velocidade da analise dos dados e garante que a posicao seja valida.
